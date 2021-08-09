@@ -54,9 +54,9 @@ class Dangerous:
         self.text_box.see(END)
         self.text_box.bind("<Key>", self.reset_timer)
         self.genre_var = StringVar(self.window)
-        self.genres = {'None', 'Mystery / Thriller', 'Romance', 'Science Fiction', 'Fantasy / Paranormal',
+        self.genres = ['None', 'Mystery / Thriller', 'Romance', 'Science Fiction', 'Fantasy / Paranormal',
                        'General Fiction', 'Religion / Spirituality', 'Travel / Adventure', 'Horror', 'Children’s',
-                       'Young Adult', 'Random'}
+                       'Young Adult', 'Random']
         self.genre_var.set('None')
         self.genre_label = Label(text="Choose a writing prompt genre:",
                                  fg=LIGHT_GREY,
