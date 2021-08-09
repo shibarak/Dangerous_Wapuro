@@ -19,11 +19,14 @@ class Dangerous:
         # ------- Set up UI ----------- #
         self.window = Tk()
         self.window.title("Dangerous WaPuRo")
-        self.window.config(padx=40, pady=10)
+        self.window.config(padx=40, pady=10, bg="#323232")
         self.canvas = Canvas()
         self.canvas.config(
             width=900,
             height=650,
+            bg="#323232",
+            borderwidth=0,
+            highlightthickness=0
         )
         image = PhotoImage(file="bg.png")
         self.canvas.create_image(450, 325, image=image)
@@ -55,11 +58,20 @@ class Dangerous:
                        'General Fiction', 'Religion / Spirituality', 'Travel / Adventure', 'Horror', 'Children’s',
                        'Young Adult', 'Random'}
         self.genre_var.set('None')
-        self.genre_label = Label(text="Choose a writing prompt genre:", fg=LIGHT_GREY, font=("Arial", 14, "normal"), )
+        self.genre_label = Label(text="Choose a writing prompt genre:",
+                                 fg=LIGHT_GREY,
+                                 font=("Arial", 14, "normal"),
+                                 bg="#323232",
+                                 borderwidth=0,
+                                 highlightthickness=0
+                                 )
         self.genre_label.grid(row=1, column=0, pady=2, padx=2)
         self.genre_drop = OptionMenu(self.window, self.genre_var, *self.genres, command=self.choose_genre)
         self.genre_drop.config(width=15,
                                height=2,
+                               bg="#323232",
+                               borderwidth=0,
+                               highlightthickness=0
                                )
         self.genre_drop.grid(row=2, column=0, pady=2, padx=2)
         self.timer()
